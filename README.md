@@ -2,13 +2,13 @@
 
 Protótipo de ação em terceira pessoa feito em Godot 4.7. O pátio de treino leva a uma cidade gótica em construção; o foco atual é movimento, combate e apresentação visual.
 
-![Tela inicial na televisão 3D](docs/title-screen-preview.png)
+![Tela inicial na televisão 3D](docs/gameplay-title.png)
 
 ## Galeria
 
-| Título | Pátio + HUD |
-| --- | --- |
-| ![Título](docs/gameplay-title.png) | ![Pátio e HUD](docs/gameplay-hud.png) |
+| Pátio + HUD |
+| --- |
+| ![Pátio e HUD](docs/gameplay-hud.png) |
 
 | Grimório vivo 3D | Skill do grimório |
 | --- | --- |
