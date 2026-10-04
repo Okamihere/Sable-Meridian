@@ -225,7 +225,7 @@ func _apply_responsive_layout() -> void:
 	var pixels := get_viewport().get_visible_rect().size
 	if pixels.x <= 0.0 or pixels.y <= 0.0:
 		return
-	var factor := clampf(minf(pixels.x / 1280.0, pixels.y / 720.0), 0.75, 1.25)
+	var factor := clampf(minf(pixels.x / 1280.0, pixels.y / 720.0), 0.75, 1.0)
 	scale = Vector2.ONE * factor
 	var area := pixels / factor
 	var margin := 12.0 if area.x < 600.0 else 20.0
