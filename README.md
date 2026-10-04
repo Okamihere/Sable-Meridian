@@ -1,8 +1,25 @@
-# SABLE MERIDIAN
+<p align="center">
+  <img src="docs/gameplay-title.png" width="100%" alt="SABLE MERIDIAN — tela inicial na televisão 3D">
+</p>
 
-Protótipo de ação em terceira pessoa em Godot 4.7 (GL Compatibility). Pátio de treino, cidade gótica em construção, combate corpo a corpo e cinco armas com skills.
+<h1 align="center">SABLE MERIDIAN</h1>
 
-![Tela inicial](docs/gameplay-title.png)
+<p align="center">
+  <i>Protótipo de ação em terceira pessoa — dark fantasy teatral num palco de jester.</i>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Godot-4.7-478CBF?logo=godot-engine&logoColor=white" alt="Godot 4.7">
+  <img src="https://img.shields.io/badge/Renderer-GL_Compatibility-6D28D9" alt="GL Compatibility">
+  <img src="https://img.shields.io/badge/Status-Prot%C3%B3tipo-E8B84B" alt="Protótipo">
+  <img src="https://img.shields.io/badge/License-MIT-3E7C4F" alt="MIT">
+</p>
+
+Protótipo feito em **Godot 4.7 (GDScript, GL Compatibility, 1920×1080)**. O pátio de treino leva a uma cidade gótica em construção; o foco atual é movimento, combate e apresentação visual.
+
+**Destaques**
+- Combate com combos, esquiva perfeita em câmera lenta, ranking de estilo D–S e 5 armas com skills Q/E/R.
+- Grimório Vivo em 3D, HUD de jester com HP/MP, TV de título 3D e tela de opções com presets e confirmação de tela.
 
 ## Galeria
 
