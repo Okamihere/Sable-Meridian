@@ -3,6 +3,7 @@ extends Node3D
 ## Adereços 3D compactos ao lado do AnimatedSprite3D, ligados ao equipamento atual.
 const STAFF := preload("res://scenes/player/mage_staff.tscn")
 const BLADE := preload("res://scenes/player/card_blade.tscn")
+const GRIMOIRE_MODEL := preload("res://assets/3d model/grimorio.glb")
 
 var _props: Dictionary = {}
 var _equipped: StringName = &""
@@ -112,13 +113,10 @@ func _make_grimoire() -> Node3D:
 	var holder := Node3D.new()
 	holder.name = "EquippedLivingGrimoire"
 	add_child(holder)
-	var cover := _material(Color(0.23, 0.11, 0.37), 0.2)
-	var ivory := _material(Color(0.72, 0.63, 0.81), 0.0)
-	var rune := _material(Color(0.6, 0.3, 0.98), 1.2)
-	_box(holder, Vector3.ZERO, Vector3(0.55, 0.66, 0.14), cover)
-	_box(holder, Vector3(0.0, 0.0, 0.09), Vector3(0.46, 0.56, 0.055), ivory)
-	var sigil := _box(holder, Vector3(0.0, 0.0, 0.135), Vector3(0.2, 0.2, 0.035), rune)
-	sigil.rotation.z = PI * 0.25
+	var book := GRIMOIRE_MODEL.instantiate() as Node3D
+	book.scale = Vector3.ONE * 0.2
+	book.position = Vector3(0.046, 0.003, 0.031)
+	holder.add_child(book)
 	holder.rotation_degrees.z = -10.0
 	return holder
 

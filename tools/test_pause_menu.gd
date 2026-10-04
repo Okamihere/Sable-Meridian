@@ -11,7 +11,7 @@ func _run() -> void:
 	var menu := root.get_node("PauseMenu")
 	menu.settings_path = "user://pause_menu_test.cfg"
 	assert(InputMap.has_action("pause_menu"), "Esc action must exist")
-	assert(menu.mode_selector.item_count == 3, "All three display modes must be listed")
+	assert(menu.mode_selector.item_count == 4, "All four display modes must be listed")
 	var two_monitors: Array[Vector2i] = [Vector2i(1366, 768), Vector2i(1920, 1080)]
 	var available: Array[Vector2i] = menu._resolutions_for_screens(two_monitors)
 	assert(available.has(Vector2i(1920, 1080)), "1080p must remain available with a smaller second monitor")
@@ -63,7 +63,7 @@ func _run() -> void:
 	var config := ConfigFile.new()
 	assert(config.load(menu.settings_path) == OK, "Display settings must be saved")
 	assert(config.get_value("video", "windowed_size") == Vector2i(1280, 720), "Saved resolution must match")
-	menu._on_mode_selected(2)
+	menu._on_mode_selected(3)
 	assert(menu._active_mode == Window.MODE_FULLSCREEN, "Borderless selection must apply")
 	assert(menu.resolution_selector.disabled, "Borderless mode uses monitor resolution")
 	menu._apply_mode(Window.MODE_EXCLUSIVE_FULLSCREEN)

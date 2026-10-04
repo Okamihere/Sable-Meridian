@@ -6,6 +6,8 @@ extends Area3D
 @export_multiline var description: String
 @export var accent: Color = Color(0.72, 0.38, 1.0)
 
+const GRIMOIRE_MODEL := preload("res://assets/3d model/grimorio.glb")
+
 var _time := 0.0
 var _display: Node3D
 var _light: OmniLight3D
@@ -100,9 +102,10 @@ func _make_symbol() -> void:
 			_box(Vector3(0.09, 1.4, 0.09), Vector3(0, -0.12, 0), accent, -0.18)
 			_box(Vector3(0.44, 0.09, 0.09), Vector3(0.12, 0.6, 0), Color(0.95, 0.82, 0.56))
 		&"living_grimoire":
-			_box(Vector3(0.9, 1.15, 0.16), Vector3(0, 0, 0), accent)
-			_box(Vector3(0.72, 0.98, 0.04), Vector3(0, 0, 0.105), Color(0.89, 0.83, 0.68))
-			_box(Vector3(0.28, 0.28, 0.05), Vector3(0, 0, 0.14), accent, PI / 4.0)
+			var book := GRIMOIRE_MODEL.instantiate() as Node3D
+			book.scale = Vector3.ONE * 0.32
+			book.position = Vector3(0.074, 0.005, 0.049)
+			_display.add_child(book)
 
 func _label(copy: String, height: float, size: int) -> void:
 	var label := Label3D.new()

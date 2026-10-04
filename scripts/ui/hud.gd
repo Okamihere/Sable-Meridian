@@ -4,10 +4,10 @@ extends CanvasLayer
 
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var health_trail: ProgressBar = %HealthTrail
-@onready var health_value: Label = %HealthValue
+@onready var health_value: Label = get_node_or_null("%HealthValue") as Label
 @onready var mana_bar: ProgressBar = %ManaBar
 @onready var mana_trail: ProgressBar = %ManaTrail
-@onready var mana_value: Label = %ManaValue
+@onready var mana_value: Label = get_node_or_null("%ManaValue") as Label
 @onready var lock_indicator: Label = %LockIndicator
 @onready var hit_flash: ColorRect = $Root/Vitals/HitFlash
 @onready var notice: PanelContainer = $Root/Notice
@@ -56,13 +56,15 @@ func _bind_player(player: Node) -> void:
 	health_bar.value = _player.health.current_health
 	health_trail.max_value = health_bar.max_value
 	health_trail.value = health_bar.value
-	health_value.text = "%d / %d" % [ceili(health_bar.value), ceili(health_bar.max_value)]
+	if health_value != null:
+		health_value.text = "%d / %d" % [ceili(health_bar.value), ceili(health_bar.max_value)]
 	mana_bar.max_value = _player.mana.max_mana
 	mana_bar.value = _player.mana.current_mana
 	mana_trail.max_value = mana_bar.max_value
 	mana_trail.value = mana_bar.value
 	_last_mana = mana_bar.value
-	mana_value.text = "%d / %d" % [ceili(mana_bar.value), ceili(mana_bar.max_value)]
+	if mana_value != null:
+		mana_value.text = "%d / %d" % [ceili(mana_bar.value), ceili(mana_bar.max_value)]
 	_player.mana.changed.connect(_on_mana_changed)
 	_player.health.damaged.connect(_on_player_damaged)
 	_player.health.healed.connect(_on_player_healed)
@@ -83,7 +85,8 @@ func _unbind_player() -> void:
 func _on_player_damaged(_amount: float, current: float, maximum: float) -> void:
 	health_bar.max_value = maximum
 	health_trail.max_value = maximum
-	health_value.text = "%d / %d" % [ceili(current), ceili(maximum)]
+	if health_value != null:
+		health_value.text = "%d / %d" % [ceili(current), ceili(maximum)]
 	if is_instance_valid(_health_tween):
 		_health_tween.kill()
 	_health_tween = create_tween()
@@ -99,7 +102,8 @@ func _on_player_damaged(_amount: float, current: float, maximum: float) -> void:
 func _on_player_healed(_amount: float, current: float, maximum: float) -> void:
 	health_bar.max_value = maximum
 	health_trail.max_value = maximum
-	health_value.text = "%d / %d" % [ceili(current), ceili(maximum)]
+	if health_value != null:
+		health_value.text = "%d / %d" % [ceili(current), ceili(maximum)]
 	if is_instance_valid(_health_tween):
 		_health_tween.kill()
 	if is_instance_valid(_health_trail_tween):
@@ -111,7 +115,8 @@ func _on_player_healed(_amount: float, current: float, maximum: float) -> void:
 func _on_mana_changed(current: float, maximum: float) -> void:
 	mana_bar.max_value = maximum
 	mana_trail.max_value = maximum
-	mana_value.text = "%d / %d" % [ceili(current), ceili(maximum)]
+	if mana_value != null:
+		mana_value.text = "%d / %d" % [ceili(current), ceili(maximum)]
 	if current < _last_mana - 0.1:
 		if is_instance_valid(_mana_tween):
 			_mana_tween.kill()

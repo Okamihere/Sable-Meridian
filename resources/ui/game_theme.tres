@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=2 format=3]
+[gd_resource type="Theme" format=3 uid="uid://cvmur167vg0to"]
 
-[ext_resource type="FontFile" path="res://assets/ui/fonts/NotoSans-Regular.ttf" id="body_font"]
+[ext_resource type="FontFile" uid="uid://vkwnqfuhqq0j" path="res://assets/ui/fonts/NotoSans-Regular.ttf" id="body_font"]
 
 [resource]
 default_font = ExtResource("body_font")

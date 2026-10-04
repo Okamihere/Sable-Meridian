@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cda0geljm45bn"]
 
 [ext_resource type="Texture2D" uid="uid://dbbxu2ck5mafw" path="res://assets/ui/HUD/hp_mp.png" id="4_8qguk"]
+[ext_resource type="Texture2D" uid="uid://bcthmba2dakrl" path="res://assets/ui/HUD/weapons_and_skills.png" id="5_136eg"]
 [ext_resource type="FontFile" uid="uid://cri05x7luamxv" path="res://assets/ui/fonts/NotoSerifDisplay-Medium.ttf" id="display_font"]
 [ext_resource type="Script" uid="uid://ddh5lftw5jbiw" path="res://scripts/ui/hud.gd" id="hud"]
-[ext_resource type="Theme" path="res://resources/ui/game_theme.tres" id="theme"]
+[ext_resource type="Theme" uid="uid://cvmur167vg0to" path="res://resources/ui/game_theme.tres" id="theme"]
 
 [sub_resource type="StyleBoxFlat" id="track"]
 bg_color = Color(0.07, 0.08, 0.12, 0.96)
@@ -88,46 +89,16 @@ offset_left = 20.0
 offset_top = 23.0
 offset_right = 359.0
 offset_bottom = 179.0
+scale = Vector2(1.3049848, 1.3049848)
 mouse_filter = 2
-
-[node name="TopRule" type="ColorRect" parent="Root/Vitals" unique_id=470701958]
-layout_mode = 0
-offset_left = 140.0
-offset_top = 11.0
-offset_right = 203.0
-offset_bottom = 13.0
-mouse_filter = 2
-color = Color(0.83, 0.69, 0.43, 0.8)
-
-[node name="HealthTitle" type="Label" parent="Root/Vitals" unique_id=107977720]
-layout_mode = 0
-offset_left = 140.0
-offset_top = 12.0
-offset_right = 215.0
-offset_bottom = 33.0
-theme_override_colors/font_color = Color(0.98, 0.74, 0.76, 1)
-theme_override_font_sizes/font_size = 13
-text = "VIDA"
-
-[node name="HealthValue" type="Label" parent="Root/Vitals" unique_id=780467980]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 206.0
-offset_top = 13.0
-offset_right = 307.0
-offset_bottom = 33.0
-theme_override_colors/font_color = Color(0.97, 0.93, 0.91, 1)
-theme_override_font_sizes/font_size = 13
-text = "100 / 100"
-horizontal_alignment = 2
 
 [node name="HealthTrail" type="ProgressBar" parent="Root/Vitals" unique_id=426869460]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 133.0
-offset_top = 35.0
-offset_right = 379.0
-offset_bottom = 43.0
+offset_left = 127.204544
+offset_top = 52.107887
+offset_right = 375.8635
+offset_bottom = 59.840794
 scale = Vector2(0.7642618, 1.9819009)
 mouse_filter = 2
 theme_override_styles/background = SubResource("track")
@@ -139,10 +110,10 @@ show_percentage = false
 [node name="HealthBar" type="ProgressBar" parent="Root/Vitals" unique_id=1215342325]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 133.0
-offset_top = 35.0
-offset_right = 379.0
-offset_bottom = 43.0
+offset_left = 127.204544
+offset_top = 52.107887
+offset_right = 375.8635
+offset_bottom = 59.840794
 scale = Vector2(0.7642618, 1.9819009)
 mouse_filter = 2
 theme_override_styles/background = SubResource("empty_track")
@@ -151,35 +122,13 @@ value = 100.0
 rounded = true
 show_percentage = false
 
-[node name="ManaTitle" type="Label" parent="Root/Vitals" unique_id=1887748426]
-layout_mode = 0
-offset_left = 142.0
-offset_top = 62.0
-offset_right = 217.0
-offset_bottom = 83.0
-theme_override_colors/font_color = Color(0.67, 0.85, 1, 1)
-theme_override_font_sizes/font_size = 13
-text = "MANA"
-
-[node name="ManaValue" type="Label" parent="Root/Vitals" unique_id=849525708]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 206.0
-offset_top = 62.0
-offset_right = 307.0
-offset_bottom = 83.0
-theme_override_colors/font_color = Color(0.91, 0.96, 1, 1)
-theme_override_font_sizes/font_size = 13
-text = "100 / 100"
-horizontal_alignment = 2
-
 [node name="ManaTrail" type="ProgressBar" parent="Root/Vitals" unique_id=1967880754]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 133.0
-offset_top = 85.0
-offset_right = 379.0
-offset_bottom = 93.0
+offset_left = 126.43825
+offset_top = 91.9551
+offset_right = 375.09723
+offset_bottom = 99.688
 scale = Vector2(0.7642618, 1.9819009)
 mouse_filter = 2
 theme_override_styles/background = SubResource("track")
@@ -191,10 +140,10 @@ show_percentage = false
 [node name="ManaBar" type="ProgressBar" parent="Root/Vitals" unique_id=926510855]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 133.0
-offset_top = 85.0
-offset_right = 379.0
-offset_bottom = 93.0
+offset_left = 126.43825
+offset_top = 91.9551
+offset_right = 375.09723
+offset_bottom = 99.688
 scale = Vector2(0.7642618, 1.9819009)
 mouse_filter = 2
 theme_override_styles/background = SubResource("empty_track")
@@ -203,20 +152,20 @@ value = 100.0
 rounded = true
 show_percentage = false
 
-[node name="HitFlash" type="ColorRect" parent="Root/Vitals" unique_id=314212594]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 280.0
-offset_top = 137.0
-offset_right = 566.0
-offset_bottom = 247.0
-mouse_filter = 2
-color = Color(0.95, 0.26, 0.34, 0.25)
-
 [node name="HpMp" type="Sprite2D" parent="Root/Vitals" unique_id=816624801]
 position = Vector2(167, 72)
 scale = Vector2(0.20992601, 0.20992601)
 texture = ExtResource("4_8qguk")
+
+[node name="HitFlash" type="ColorRect" parent="Root/Vitals" unique_id=314212594]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -15.325849
+offset_top = -17.624725
+offset_right = 1455.9557
+offset_bottom = 809.97107
+mouse_filter = 2
+color = Color(0.9490196, 0.25882354, 0.34117648, 0.2509804)
 
 [node name="LockIndicator" type="Label" parent="Root" unique_id=1150604917]
 unique_name_in_owner = true
@@ -238,8 +187,10 @@ vertical_alignment = 1
 [node name="Notice" type="PanelContainer" parent="Root" unique_id=842956294]
 visible = false
 layout_mode = 0
-offset_right = 520.0
-offset_bottom = 94.0
+offset_left = 684.0
+offset_top = 54.0
+offset_right = 1204.0
+offset_bottom = 148.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("notice_glass")
 
@@ -290,8 +241,10 @@ clip_text = true
 [node name="WallHint" type="PanelContainer" parent="Root" unique_id=1474929935]
 visible = false
 layout_mode = 0
-offset_right = 260.0
-offset_bottom = 40.0
+offset_left = 825.0
+offset_top = 977.0
+offset_right = 1085.0
+offset_bottom = 1017.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("glass")
 
@@ -309,3 +262,8 @@ theme_override_colors/font_color = Color(0.93, 0.87, 0.74, 1)
 theme_override_font_sizes/font_size = 14
 text = "ESPAÇO  •  SALTAR DA PAREDE"
 horizontal_alignment = 1
+
+[node name="WeaponsAndSkills" type="Sprite2D" parent="." unique_id=1381202712]
+position = Vector2(280.28192, 984.0321)
+scale = Vector2(0.25488257, 0.25488266)
+texture = ExtResource("5_136eg")

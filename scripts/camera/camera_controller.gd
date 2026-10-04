@@ -83,6 +83,7 @@ var _focus_target: Node3D
 func _ready() -> void:
 	mouse_sensitivity = GameManager.camera_sensitivity
 	GameManager.camera_sensitivity_changed.connect(_on_camera_sensitivity_changed)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_player = get_node_or_null(player_path) as Node3D
 	
 	# Initialize shader parameters with current values

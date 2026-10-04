@@ -33,7 +33,7 @@ func _run() -> void:
 	menu.open_pause()
 	assert(paused and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "Pause deve liberar mouse")
 	menu.show_options()
-	assert(menu._tab_pages.size() == 3, "Três categorias devem existir")
+	assert(menu._tab_pages.size() == 4, "Quatro categorias devem existir")
 	menu._show_tab(1)
 	menu._volume_sliders["Master"].value = 55
 	menu._volume_sliders["Music"].value = 70
@@ -68,9 +68,9 @@ func _run() -> void:
 	await create_timer(0.8).timeout
 	await _frames(10)
 	assert(current_scene.scene_file_path.ends_with("start_room.tscn") and not paused, "Continuar deve reabrir gameplay")
-	assert(Input.mouse_mode == initial_gameplay_mouse, "Gameplay deve restaurar o modo de mouse inicial")
+	assert(Input.mouse_mode == Input.MOUSE_MODE_CAPTURED, "Gameplay deve capturar o mouse")
 	menu._load_settings()
-	assert(is_equal_approx(menu.camera_sensitivity, 0.0042), "Configuração deve recarregar")
+	assert(is_equal_approx(root.get_node("GameManager").camera_sensitivity, 0.0042), "Configuração deve recarregar")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(menu.settings_path))
 	print("PASS: título, NPC, pause, áudio, FPS, câmera, persistência e retorno")
 	quit()
