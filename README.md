@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/gameplay-title.png" width="100%" alt="SABLE MERIDIAN">
+  <img src="docs/gameplay-press-start.png" width="100%" alt="SABLE MERIDIAN — tela press start">
 </p>
 
 <h1 align="center">SABLE MERIDIAN</h1>
