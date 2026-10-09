@@ -79,6 +79,7 @@ Sob holofotes de névoa, o **Veyl** — bobo de corte em traje carmesim — acor
 
 ## Novidades
 
+* **Out/2026** — Grimório Vivo com combate completo: combo visual de 4 golpes, Mordida do Manuscrito, Página Errante (Q), Aplausos Obrigatórios (E), marionete O Último Ato (R) e ataques aéreos; zonas de câmera fixa; água no GridMap; 8 mundos editáveis.
 * **Out/2026** — Tela press-start cinematográfica como abertura, hub com 8 mundos, kit visual graybox, shaders de água e céu, 6 armas com skills, grimório 3D e builds Linux + Windows.
 * **Out/2026** — Combate com esquiva perfeita em câmera lenta, ranking de estilo D–S, lock-on, saltos em parede com orbes e HUD de vela com HP/MP.
 
